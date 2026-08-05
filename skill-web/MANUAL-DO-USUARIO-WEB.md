@@ -58,9 +58,9 @@ avisa com o atalho certo.
 
 1. Abra uma conversa nova no claude.ai.
 2. Diga o que precisa, do seu jeito. Exemplos que funcionam:
-   - "quero documentar essa API: https://developers.exemplo.com/docs"
-   - "documenta o endpoint de criar pedido do parceiro X"
-   - "atualiza a doc do Confluence dessa API, aqui o link da página"
+    - "quero documentar essa API: https://developers.exemplo.com/docs"
+    - "documenta o endpoint de criar pedido do parceiro X"
+    - "atualiza a doc do Confluence dessa API, aqui o link da página"
 3. A partir daí o Claude conduz por **perguntas de múltipla escolha**. Você
    não digita tabela, não digita campo, não decora comando. A única coisa que
    você cola é link.
