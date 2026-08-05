@@ -52,6 +52,26 @@ e é essa saída que você oferece.
 **N0, contexto (sem pergunta).** Se a mensagem já tem link de doc de API, vá
 achar a fonte na hora (N3). Não assuma contexto que a pessoa não deu.
 
+**N0.5, pré-voo do Confluence (checagem silenciosa, aviso só se faltar).**
+Toda rota que termina em publicação (A, B, e C quando vira página) precisa do
+conector do Atlassian. Confira LOGO NO COMEÇO se as ferramentas do Atlassian
+estão disponíveis nesta conversa. Estão: siga sem comentar nada. NÃO estão:
+avise agora, nunca na hora de publicar, neste formato:
+
+  Uma coisa antes de começarmos: quem publica no Confluence é o conector do
+  Atlassian, e ele não está ativo nesta conversa.
+  **Como você prefere seguir?**
+  1. Configurar agora: abra https://claude.ai/settings/connectors, conecte o
+     **Atlassian** com sua conta harpix, e me diga "pronto" (leva 1 minuto,
+     e pode ser preciso abrir uma conversa nova depois)
+  2. Seguir sem ele por enquanto: eu preparo o rascunho normalmente e a
+     publicação fica pro final, quando você conectar
+
+  Responda o número.
+
+O trabalho de extração e rascunho NUNCA fica bloqueado por isso; o que
+bloqueia sem o conector é só o passo de publicar.
+
 **N1, rota (só quando o pedido não deixou claro).** "O que você precisa hoje?"
 1. Documentar uma API nova -> rota A
 2. Atualizar uma doc que já existe no Confluence -> rota B
