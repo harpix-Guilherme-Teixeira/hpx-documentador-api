@@ -1,0 +1,14 @@
+{
+  "name": "hpx-documentador-api",
+  "owner": {
+    "name": "Guilherme Teixeira",
+    "email": "guisdomkt@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "doc-api",
+      "source": "./plugins/doc-api",
+      "description": "Documentacao de API no padrao harpix: acha a fonte oficial (OpenAPI), extrai os campos reais, monta o rascunho, confere campo inventado e publica no Confluence pelo conector do Atlassian. Porta de entrada: /doc-api:documentar."
+    }
+  ]
+}

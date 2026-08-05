@@ -1,0 +1,14 @@
+{
+  "name": "doc-api",
+  "displayName": "doc-api harpix",
+  "version": "1.0.0",
+  "description": "Documentacao de API no padrao harpix. O plugin traz o MCP doc-api embutido (extracao da fonte oficial e verificacao de campo inventado), a skill com os gatilhos de uso e o comando /doc-api:documentar como porta de entrada unica. Campo, tipo e exemplo saem sempre da fonte, nunca da memoria do modelo. Nada e publicado sem aprovacao humana.",
+  "author": {
+    "name": "Guilherme Teixeira",
+    "email": "guisdomkt@gmail.com",
+    "url": "https://github.com/harpix-Guilherme-Teixeira"
+  },
+  "repository": "https://github.com/harpix-Guilherme-Teixeira/hpx-documentador-api",
+  "license": "UNLICENSED",
+  "keywords": ["harpix", "api", "documentacao", "openapi", "confluence"]
+}
