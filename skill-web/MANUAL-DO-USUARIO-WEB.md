@@ -39,6 +39,23 @@ Confluence com a sua conta: em Configurações > **Conectores**, conecte o
 **Atlassian** e faça o login no navegador com a conta harpix. Quem já usa o
 Atlassian no Claude (pra Jira, por exemplo) não precisa fazer nada.
 
+## Antes do primeiro uso: o checklist dos 5 sins
+
+Responda sim ou não, na ordem. O primeiro "não" te diz exatamente pra onde ir,
+resolve e volta pra pergunta seguinte.
+
+| # | Pergunta | Se NÃO, o caminho |
+|---|---|---|
+| 1 | Tenho conta no claude.ai com o login harpix? | peça o acesso ao administrador da organização |
+| 2 | A skill **doc-api** aparece em Configurações > Recursos > Skills? | volte à Parte 1 e Parte 2 deste manual (baixar o zip no go e inserir) |
+| 3 | **Execução de código** está ligada na mesma tela? | ligue ali mesmo; se a opção não existir, é habilitação do admin, avise o dono do processo |
+| 4 | O conector **Atlassian** está conectado? | https://claude.ai/settings/connectors, conectar Atlassian com a conta harpix |
+| 5 | Consigo escrever no espaço do Confluence onde a doc vai morar? | permissão de Confluence, fale com quem administra o Atlassian na harpix |
+
+Cinco sins: você está pronto, e nunca mais precisa olhar este checklist. Na
+dúvida durante o uso, a própria skill confere o Atlassian e a navegação e te
+avisa com o atalho certo.
+
 ## Parte 3: usar no dia a dia
 
 1. Abra uma conversa nova no claude.ai.
