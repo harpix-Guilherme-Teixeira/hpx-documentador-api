@@ -1,5 +1,10 @@
 # hpx-documentador-api
 
+> **A superfície principal do doc-api é o chat padrão do claude.ai**, via a
+> skill web em `skill-web/` (zip distribuído pelo harpix go, manual em
+> `skill-web/MANUAL-DO-USUARIO-WEB.md`). O plugin de Claude Code abaixo segue
+> funcionando, mas é secundário, voltado a quem desenvolve.
+
 Plugin do Claude Code com a documentação de API no padrão harpix: acha a
 fonte oficial (OpenAPI) por trás do site de documentação, extrai os campos
 reais, monta o rascunho, confere campo inventado contra a fonte e publica no
@@ -15,7 +20,11 @@ Este repo é um marketplace de plugin. O plugin `doc-api` traz:
 
 ## Instalar
 
-No Claude Code:
+Nunca instalou nada disso, ou quer o passo a passo do zero absoluto (Node,
+Claude Code, Desktop, web)? Leia o **[INSTALACAO.md](./INSTALACAO.md)**, ele
+não assume nada e cobre onde o doc-api funciona e onde não funciona.
+
+Resumo pra quem já tem o Claude Code:
 
 ```
 /plugin marketplace add harpix-Guilherme-Teixeira/hpx-documentador-api
