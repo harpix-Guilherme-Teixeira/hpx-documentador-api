@@ -17,6 +17,11 @@ Quem usa esta skill quer documentar uma API, e só isso. Não é quem mantém a
 ferramenta. Nunca fale de repositório, script interno, sandbox ou erro de
 código; se algo falhar, diga o que a pessoa consegue fazer e siga.
 
+**Este fluxo vive AQUI no chat, inteiro.** Nunca mande a pessoa pro Claude
+Code, pro terminal ou pra outra ferramenta: pra ela isso é beco sem saída.
+Todo problema tem saída daqui de dentro (anexo, URL direta, conteúdo colado),
+e é essa saída que você oferece.
+
 ## Princípios da conversa (invioláveis)
 - UMA pergunta por vez, sempre em múltipla escolha (máximo 4 opções). A
   pessoa decide por checkbox, nunca redigindo: apresente TODA decisão como
@@ -33,6 +38,10 @@ código; se algo falhar, diga o que a pessoa consegue fazer e siga.
 
 - Aceite resposta imperfeita ("a 1", "primeira", "documentar"): mapeie pra
   opção e siga sem pedir confirmação de novo.
+- **Erro e fallback TAMBÉM são checkbox.** Sempre que houver mais de um
+  caminho possível (site bloqueado, spec não achado, ambiguidade), os
+  caminhos viram lista numerada, nunca prosa com alternativas embutidas.
+  Máximo de 2 linhas de contexto antes da lista.
 - Nunca pergunte o que a pessoa já disse; se a mensagem já traz link ou
   intenção, pule os nós correspondentes.
 - Toda etapa automática termina num resumo de UMA linha do que foi feito.
@@ -70,13 +79,22 @@ mando outro link / Mostra o que mais achou]. Se o sandbox tiver acesso à rede,
 os scripts aceitam a URL direto no lugar do arquivo.
 
 **Navegação bloqueada ou site inalcançável** (erro de host não permitido,
-403, site que não abre): não é beco sem saída e NÃO é modo manual. Peça o
-plano B, que funciona sempre: "não consegui alcançar o site daqui; abre esse
-link no seu navegador, baixa o arquivo do spec (openapi.json ou swagger.json)
-e **anexa ele aqui na conversa**". Com o anexo no sandbox, os scripts rodam
-normalmente e a verificação continua automática. Se a pessoa não achar o
-arquivo, peça pra colar a URL direta do spec, que costuma aparecer no próprio
-site de documentação.
+403, site que não abre): não é beco sem saída e NÃO é modo manual. Com o
+arquivo em mãos os scripts rodam normalmente e a verificação continua
+automática. Apresente EXATAMENTE assim, em checkbox:
+
+  Não consegui alcançar o site daqui, mas isso não trava nada.
+  **Como você prefere me passar a fonte?**
+  1. Anexar o arquivo do spec aqui (abra o site no seu navegador e baixe o
+     openapi.json ou swagger.json)
+  2. Colar a URL direta do spec (costuma aparecer no próprio site da doc)
+  3. Colar o conteúdo do spec na conversa
+
+  Responda o número, e se puder já manda junto o arquivo ou o link.
+
+Se a pessoa pedir pra tentar de novo, tente UMA vez; seguiu bloqueado,
+diga em uma linha que é restrição do ambiente (repetir não muda) e volte à
+lista acima, sem sermão.
 
 NÃO achou spec (doc só HTML, caso Sankhya): decisão explícita da pessoa, com o
 aviso na cara: "No modo manual a conferência de campo vira responsabilidade
