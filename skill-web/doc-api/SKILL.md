@@ -164,6 +164,16 @@ primeiro) e trabalhe em **lotes de 5 páginas**: fecha 5, a pessoa revisa 5,
 abre o próximo lote. Cada página tem seu próprio gate, e no fim de cada lote
 repita o que ainda falta do inventário pra pessoa decidir se segue.
 
+**N4.5, destino no Confluence (cedo, não no fim).** Se a pessoa ainda não
+disse onde a doc vai morar, pergunte agora:
+
+  **Já sabe onde isso vai morar no Confluence?**
+  1. Sei, vou colar o link do espaço ou da página pai
+  2. Ainda não, decidimos na hora de publicar
+
+Guarde a resposta e não pergunte de novo no N10. Se ela já tiver dito na
+abertura (ex: "a página pai é X"), este nó não existe.
+
 **N6, códigos da plataforma (uma vez por API):** "Essa plataforma tem página
 geral de códigos de erro?" [Tem, vou colar o link / Procura pra mim / Não
 tem]. Com a página, some os códigos gerais aos do endpoint na tabela de
@@ -203,9 +213,24 @@ checklist do que a máquina não confere:
 3. Os assassinos silenciosos deste endpoint estão destacados?
 Pergunta única, em bloco: [Aprovar e publicar / Pedir ajuste / Cancelar].
 
-**N10, destino:** [Página nova, vou criar e mando o link / Página existente,
-colo o link]. Publique pelo conector do Atlassian e feche com o GATE 2: "abra
-a página publicada e confira as tabelas renderizadas".
+**N10, destino e antiduplicata.** Use o destino guardado no N4.5; se não
+houver, pergunte: [Página nova, vou criar e mando o link / Página existente,
+colo o link]. **Antes de preencher página nova, busque pelo conector se já
+existe doc dessa API ou desse endpoint no Confluence**; achou algo parecido,
+mostre e pergunte: [Atualizar a que existe (vira rota B) / Criar nova mesmo].
+Publique pelo conector do Atlassian e feche com o GATE 2: "abra a página
+publicada e confira as tabelas renderizadas".
+
+**N11, fim de lote (só em trabalho de lote).** Publicadas as páginas do
+lote, encerre com o placar e a decisão:
+
+  Lote fechado: N páginas publicadas. Do inventário ainda faltam: <grupos e
+  contagens>.
+  **Seguimos?**
+  1. Próximo lote: <qual seria>
+  2. Paramos por aqui
+
+  Responda o número.
 
 ### Rota B, atualizar doc existente
 **B1.** Peça o link da página do Confluence ANTES de extrair qualquer coisa.
