@@ -31,6 +31,10 @@ RUIDO = {
     "get", "post", "put", "patch", "delete", "http", "https", "curl", "bash", "preencher",
     "endpoint", "metodo", "ambiente", "funcao", "alteracao", "parametro", "onde",
     "sistema", "parceiro", "squad", "data", "prioridade", "responsavel", "tecnico",
+    # rotulos de tabela chave/valor do padrao harpix (caso real: "Alternativa"
+    # numa tabela de autenticacao acusado como campo inventado)
+    "alternativa", "exemplo", "observacao", "observacoes", "retorno", "resposta",
+    "escopo", "credenciais",
 }
 
 NOME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_.]*$")
@@ -82,6 +86,13 @@ def extrair_citados(markdown):
 
 
 def coletar_campos_da_fonte(spec):
+    """Tudo que o spec declara e que um rascunho cita legitimamente.
+
+    Caso real (HubSpot): 10 de 11 suspeitos eram host de `servers`, esquema e
+    escopo OAuth de `securitySchemes` e a chave `default` de `responses`. O
+    verificador so varria `properties` e parametros, entao acusava identificador
+    legitimo da propria fonte. Falso suspeito custa uma rodada de prova manual.
+    """
     nomes = set()
 
     def walk(n, prof=0):
@@ -98,10 +109,45 @@ def coletar_campos_da_fonte(spec):
         # derefado nao pode virar falso "campo inventado")
         if n.get("name") and n.get("in"):
             nomes.add(n["name"])
+        # chaves de resposta ("200", "default") sao citaveis na tabela de status
+        if isinstance(n.get("responses"), dict):
+            nomes.update(str(k) for k in n["responses"])
+        # servers: a URL e o host aparecem em Autenticacao e Endpoint
+        if isinstance(n.get("servers"), list):
+            for s in n["servers"]:
+                url = (s or {}).get("url") or ""
+                if url:
+                    nomes.add(url)
+                    host = re.sub(r"^https?://", "", url).split("/")[0]
+                    if host:
+                        nomes.add(host)
         for v in n.values():
             walk(v, prof + 1)
 
     walk(spec)
+
+    # securitySchemes: nome do esquema, chave de apiKey e escopos OAuth
+    comp = spec.get("components") or {}
+    schemes = comp.get("securitySchemes") or spec.get("securityDefinitions") or {}
+    for nome_esquema, esquema in schemes.items():
+        nomes.add(nome_esquema)
+        if isinstance(esquema, dict):
+            if esquema.get("name"):
+                nomes.add(esquema["name"])
+            if esquema.get("scheme"):
+                nomes.add(esquema["scheme"])
+            flows = esquema.get("flows") or {}
+            for flow in flows.values() if isinstance(flows, dict) else []:
+                for escopo in (flow or {}).get("scopes") or {}:
+                    nomes.add(escopo)
+            for escopo in esquema.get("scopes") or {}:  # swagger 2.0
+                nomes.add(escopo)
+
+    # fragmento final de identificador pontuado permitido tambem e permitido
+    # (o extrator de citacoes registra "read" ao ver "crm.objects.contacts.read")
+    for n in list(nomes):
+        if "." in n:
+            nomes.add(n.split(".")[-1])
     return nomes
 
 

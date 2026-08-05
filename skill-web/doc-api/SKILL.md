@@ -104,15 +104,23 @@ Liberado pra qualquer um, mas só depois desse aviso.
 **N4, escopo:** [Um endpoint específico / Um recurso (grupo de endpoints) / A
 API inteira].
 
-**N5, seleção sem digitação.** Rode:
+**N5, o inventário completo ANTES de qualquer escolha.** Rode:
 ```
-python scripts/extrair.py spec.json --tags
+python scripts/extrair.py spec.json --list
 ```
-e as tags viram as opções da pergunta. Escolhida a área, rode `--list`, filtre
-pela tag e as operações viram opções. Nunca peça termo de busca digitado.
+e mostre **a lista COMPLETA dos endpoints que existem no spec**, organizada
+por grupo (tag), cada um com método, path e resumo de uma linha, mais o total
+("este spec tem N operações em M grupos"). NUNCA mostre um recorte, uma
+amostra ou só o grupo que você acha relevante: a pessoa só consegue escolher
+escopo vendo o mapa inteiro, e o que ficou de fora precisa ficar de fora POR
+DECISÃO dela, não por omissão sua. Lista longa continua completa, só agrupada.
+
+Feito isso, os grupos viram as opções numeradas da escolha; escolhido o
+grupo, as operações dele viram opções. Nunca peça termo de busca digitado.
 API inteira é um lote: proponha a ordem (operações de escrita e mais usadas
 primeiro) e trabalhe em **lotes de 5 páginas**: fecha 5, a pessoa revisa 5,
-abre o próximo lote. Cada página tem seu próprio gate.
+abre o próximo lote. Cada página tem seu próprio gate, e no fim de cada lote
+repita o que ainda falta do inventário pra pessoa decidir se segue.
 
 **N6, códigos da plataforma (uma vez por API):** "Essa plataforma tem página
 geral de códigos de erro?" [Tem, vou colar o link / Procura pra mim / Não
@@ -135,10 +143,13 @@ rascunho em arquivo e rode:
 ```
 python scripts/verificar.py rascunho.md spec.json
 ```
-- Veredito SUSPEITOS: para CADA campo suspeito, uma pergunta: [É campo de
-  cadastro ou config, libera / Está errado, remove / Corrigir para outro
-  nome]. Liberados entram em `--liberar` na reexecução. Nunca decida sozinho
-  e nunca agrupe suspeitos numa pergunta só.
+- Veredito SUSPEITOS: antes de perguntar, tente PROVAR cada suspeito na
+  fonte (spec ou doc oficial da plataforma). Os provados podem ir numa
+  pergunta única em bloco, com a tabela suspeito -> onde está na fonte, e a
+  decisão de liberar segue sendo da pessoa. Suspeito SEM prova é um a um:
+  [É campo de cadastro ou config, libera / Está errado, remove / Corrigir
+  para outro nome]. Liberados entram em `--liberar` na reexecução. Nunca
+  decida sozinho e nunca libere sem prova nem pergunta.
 - Veredito INCONCLUSIVO (menos de 5 campos conferidos): não leia como
   aprovação, investigue por que o rascunho cita tão pouco campo.
 - Só mostre rascunho com veredito limpo.
