@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 850" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="seq" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#333333"/>
+    </marker>
+    <marker id="msg" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#666666" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <style>
+    .pool { fill: #ffffff; stroke: #333333; stroke-width: 1.6; }
+    .band { fill: #f5f5f5; stroke: #333333; stroke-width: 1.6; }
+    .lane { fill: none; stroke: #999999; stroke-width: 1; }
+    .task { fill: #ffffff; stroke: #333333; stroke-width: 1.5; }
+    .gate-task { fill: #FEF4F1; stroke: #EF5727; stroke-width: 1.8; }
+    .script-task { fill: #fafafa; stroke: #333333; stroke-width: 1.5; }
+    .gw { fill: #ffffff; stroke: #333333; stroke-width: 1.5; }
+    .ev-start { fill: #ffffff; stroke: #333333; stroke-width: 1.6; }
+    .ev-end { fill: #ffffff; stroke: #333333; stroke-width: 3.4; }
+    .ev-mid { fill: #ffffff; stroke: #333333; stroke-width: 1.4; }
+    .seqf { fill: none; stroke: #333333; stroke-width: 1.5; }
+    .msgf { fill: none; stroke: #666666; stroke-width: 1.3; stroke-dasharray: 5 4; }
+    .t { font-size: 11.5px; fill: #111111; text-anchor: middle; }
+    .tl { font-size: 10px; fill: #555555; text-anchor: middle; font-style: italic; }
+    .lab { font-size: 10.5px; fill: #333333; text-anchor: middle; }
+    .band-t { font-size: 13px; fill: #111111; text-anchor: middle; font-weight: 600; }
+    .lane-t { font-size: 11px; fill: #333333; text-anchor: middle; }
+    .anno { font-size: 10px; fill: #555555; font-style: italic; }
+    .annol { fill: none; stroke: #999999; stroke-width: 1; stroke-dasharray: 2 3; }
+  </style>
+
+  <!-- ============ POOL 1: Operador ============ -->
+  <rect class="pool" x="20" y="20" width="1845" height="250"/>
+  <rect class="band" x="20" y="20" width="28" height="250"/>
+  <text class="band-t" transform="translate(38,145) rotate(-90)">Operador</text>
+
+  <!-- ============ POOL 2: Processo doc-api ============ -->
+  <rect class="pool" x="20" y="290" width="1845" height="535"/>
+  <rect class="band" x="20" y="290" width="28" height="535"/>
+  <text class="band-t" transform="translate(38,557) rotate(-90)">Processo doc-api (claude.ai)</text>
+  <rect class="lane" x="48" y="290" width="1817" height="180"/>
+  <rect class="band" x="48" y="290" width="24" height="180"/>
+  <text class="lane-t" transform="translate(64,380) rotate(-90)">Claude (condução)</text>
+  <rect class="lane" x="48" y="470" width="1817" height="170"/>
+  <rect class="band" x="48" y="470" width="24" height="170"/>
+  <text class="lane-t" transform="translate(64,555) rotate(-90)">Scripts da skill</text>
+  <rect class="lane" x="48" y="640" width="1817" height="185"/>
+  <rect class="band" x="48" y="640" width="24" height="185"/>
+  <text class="lane-t" transform="translate(64,732) rotate(-90)">Conector Atlassian</text>
+
+  <!-- ============ Raia Operador ============ -->
+  <circle class="ev-start" cx="130" cy="145" r="16"/>
+  <text class="tl" x="130" y="180">Demanda de</text>
+  <text class="tl" x="130" y="192">documentar API</text>
+
+  <rect class="task" x="180" y="117" width="130" height="56" rx="8"/>
+  <text class="t" x="245" y="141">Colar o link da</text>
+  <text class="t" x="245" y="155">doc do parceiro</text>
+
+  <rect class="task" x="370" y="117" width="140" height="56" rx="8"/>
+  <text class="t" x="440" y="141">Escolher escopo e</text>
+  <text class="t" x="440" y="155">destino (checkbox)</text>
+
+  <rect class="gate-task" x="1150" y="117" width="150" height="56" rx="8"/>
+  <text class="t" x="1225" y="141">Ler o rascunho</text>
+  <text class="t" x="1225" y="155">inteiro (GATE 1)</text>
+
+  <path class="gw" d="M1370,119 L1396,145 L1370,171 L1344,145 Z"/>
+  <path d="M1362,137 L1378,153 M1378,137 L1362,153" stroke="#333333" stroke-width="1.6" fill="none"/>
+  <text class="tl" x="1370" y="110">aprova?</text>
+
+  <rect class="task" x="1430" y="117" width="150" height="56" rx="8"/>
+  <text class="t" x="1505" y="141">Criar a página e</text>
+  <text class="t" x="1505" y="155">mandar o link</text>
+
+  <circle class="ev-mid" cx="1625" cy="145" r="14"/>
+  <circle class="ev-mid" cx="1625" cy="145" r="10.5"/>
+  <rect x="1619" y="141.5" width="12" height="8" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <path d="M1619,141.5 L1625,146 L1631,141.5" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <text class="tl" x="1625" y="196">página</text>
+  <text class="tl" x="1625" y="208">preenchida</text>
+
+  <rect class="gate-task" x="1660" y="117" width="130" height="56" rx="8"/>
+  <text class="t" x="1725" y="141">Conferir a página</text>
+  <text class="t" x="1725" y="155">(GATE 2)</text>
+
+  <circle class="ev-end" cx="1825" cy="145" r="15"/>
+  <text class="tl" x="1825" y="180">doc publicada</text>
+
+  <line class="seqf" x1="146" y1="145" x2="178" y2="145" marker-end="url(#seq)"/>
+  <line class="seqf" x1="310" y1="145" x2="368" y2="145" marker-end="url(#seq)"/>
+  <line class="seqf" x1="510" y1="145" x2="1148" y2="145" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1300" y1="145" x2="1342" y2="145" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1396" y1="145" x2="1428" y2="145" marker-end="url(#seq)"/>
+  <text class="lab" x="1412" y="138">sim</text>
+  <line class="seqf" x1="1580" y1="145" x2="1609" y2="145" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1639" y1="145" x2="1658" y2="145" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1790" y1="145" x2="1808" y2="145" marker-end="url(#seq)"/>
+
+  <!-- ============ Raia Claude ============ -->
+  <circle class="ev-start" cx="130" cy="380" r="16"/>
+  <rect x="122" y="375" width="16" height="11" fill="none" stroke="#333333" stroke-width="1.2"/>
+  <path d="M122,375 L130,381 L138,375" fill="none" stroke="#333333" stroke-width="1.2"/>
+  <text class="tl" x="130" y="415">pedido recebido</text>
+
+  <rect class="task" x="180" y="352" width="140" height="56" rx="8"/>
+  <text class="t" x="250" y="376">Achar o spec oficial</text>
+  <text class="t" x="250" y="390">por trás do site</text>
+
+  <rect class="task" x="370" y="352" width="140" height="56" rx="8"/>
+  <text class="t" x="440" y="376">Mostrar o inventário</text>
+  <text class="t" x="440" y="390">completo</text>
+
+  <circle class="ev-mid" cx="575" cy="380" r="14"/>
+  <circle class="ev-mid" cx="575" cy="380" r="10.5"/>
+  <rect x="569" y="376.5" width="12" height="8" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <path d="M569,376.5 L575,381 L581,376.5" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <text class="tl" x="575" y="415">escopo definido</text>
+
+  <rect class="task" x="760" y="352" width="140" height="56" rx="8"/>
+  <text class="t" x="830" y="376">Montar o rascunho</text>
+  <text class="t" x="830" y="390">no padrão harpix</text>
+
+  <rect class="task" x="1090" y="352" width="150" height="56" rx="8"/>
+  <text class="t" x="1165" y="376">Provar suspeitos na</text>
+  <text class="t" x="1165" y="390">fonte e perguntar</text>
+
+  <circle class="ev-mid" cx="1290" cy="380" r="14"/>
+  <rect x="1283" y="376" width="14" height="9" fill="#333333"/>
+  <path d="M1283,376 L1290,381 L1297,376" fill="none" stroke="#ffffff" stroke-width="1.2"/>
+  <text class="tl" x="1400" y="412">rascunho enviado</text>
+
+  <line class="seqf" x1="146" y1="380" x2="178" y2="380" marker-end="url(#seq)"/>
+  <line class="seqf" x1="320" y1="380" x2="368" y2="380" marker-end="url(#seq)"/>
+  <line class="seqf" x1="510" y1="380" x2="559" y2="380" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1240" y1="380" x2="1274" y2="380" marker-end="url(#seq)"/>
+
+  <!-- ============ Raia Scripts ============ -->
+  <rect class="script-task" x="620" y="527" width="130" height="56" rx="8"/>
+  <text class="t" x="685" y="546">extrair.py:</text>
+  <text class="t" x="685" y="560">extrair campos</text>
+  <text class="t" x="685" y="574">e tipos</text>
+
+  <rect class="script-task" x="930" y="527" width="140" height="56" rx="8"/>
+  <text class="t" x="1000" y="546">verificar.py:</text>
+  <text class="t" x="1000" y="560">conferir cada</text>
+  <text class="t" x="1000" y="574">campo citado</text>
+
+  <path class="gw" d="M1110,529 L1136,555 L1110,581 L1084,555 Z"/>
+  <path d="M1102,547 L1118,563 M1118,547 L1102,563" stroke="#333333" stroke-width="1.6" fill="none"/>
+  <text class="tl" x="1110" y="600">suspeito?</text>
+
+  <polyline class="seqf" points="589,380 605,380 605,555 618,555" marker-end="url(#seq)"/>
+  <polyline class="seqf" points="750,555 755,555 755,380 758,380" marker-end="url(#seq)"/>
+  <polyline class="seqf" points="900,380 915,380 915,555 928,555" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1070" y1="555" x2="1082" y2="555" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1110" y1="529" x2="1110" y2="411" marker-end="url(#seq)"/>
+  <text class="lab" x="1122" y="470">sim</text>
+  <polyline class="seqf" points="1136,555 1290,555 1290,397" marker-end="url(#seq)"/>
+  <text class="lab" x="1200" y="548">não</text>
+
+  <!-- ============ Raia Conector ============ -->
+  <circle class="ev-mid" cx="1380" cy="732" r="14"/>
+  <circle class="ev-mid" cx="1380" cy="732" r="10.5"/>
+  <rect x="1374" y="728.5" width="12" height="8" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <path d="M1374,728.5 L1380,733 L1386,728.5" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <text class="tl" x="1380" y="768">aprovação</text>
+  <text class="tl" x="1380" y="780">recebida</text>
+
+  <rect class="task" x="1420" y="704" width="150" height="56" rx="8"/>
+  <text class="t" x="1495" y="728">Buscar doc existente</text>
+  <text class="t" x="1495" y="742">(antiduplicata)</text>
+
+  <rect class="task" x="1610" y="704" width="160" height="56" rx="8"/>
+  <text class="t" x="1690" y="728">Preencher a página</text>
+  <text class="t" x="1690" y="742">pela conta da pessoa</text>
+
+  <circle class="ev-end" cx="1815" cy="732" r="15"/>
+  <text class="tl" x="1815" y="768">trabalho</text>
+  <text class="tl" x="1815" y="780">encerrado</text>
+
+  <polyline class="seqf" points="1304,380 1330,380 1330,732 1364,732" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1394" y1="732" x2="1418" y2="732" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1570" y1="732" x2="1608" y2="732" marker-end="url(#seq)"/>
+  <line class="seqf" x1="1770" y1="732" x2="1798" y2="732" marker-end="url(#seq)"/>
+
+  <!-- ============ Fluxos de mensagem (tracejados) ============ -->
+  <line class="msgf" x1="245" y1="173" x2="139" y2="363" marker-end="url(#msg)"/>
+  <text class="tl" x="163" y="283">link da doc</text>
+
+  <line class="msgf" x1="425" y1="352" x2="425" y2="176" marker-end="url(#msg)"/>
+  <text class="tl" x="360" y="283">inventário completo</text>
+
+  <line class="msgf" x1="475" y1="173" x2="568" y2="365" marker-end="url(#msg)"/>
+  <text class="tl" x="580" y="283">escopo e destino</text>
+
+  <line class="msgf" x1="1290" y1="366" x2="1232" y2="176" marker-end="url(#msg)"/>
+  <text class="tl" x="1330" y="283">rascunho verificado</text>
+
+  <polyline class="msgf" points="1370,171 1370,315 830,315 830,349" marker-end="url(#msg)"/>
+  <text class="tl" x="1100" y="308">pedir ajuste</text>
+
+  <polyline class="msgf" points="1480,173 1480,655 1380,655 1380,715" marker-end="url(#msg)"/>
+  <text class="tl" x="1540" y="440">aprovação e link</text>
+  <text class="tl" x="1540" y="452">da página</text>
+
+  <polyline class="msgf" points="1690,704 1690,250 1625,250 1625,162" marker-end="url(#msg)"/>
+  <text class="tl" x="1745" y="440">página</text>
+  <text class="tl" x="1745" y="452">preenchida</text>
+
+  <!-- ============ Anotações ============ -->
+  <path class="annol" d="M250,410 L250,438"/>
+  <path d="M158,442 L152,442 L152,466 L158,466" fill="none" stroke="#999999" stroke-width="1"/>
+  <text class="anno" x="160" y="450">site bloqueado pra navegação:</text>
+  <text class="anno" x="160" y="462">a fonte vem por anexo, nada se perde</text>
+
+  <path class="annol" d="M1110,600 L1110,612"/>
+  <path d="M1038,614 L1032,614 L1032,638 L1038,638" fill="none" stroke="#999999" stroke-width="1"/>
+  <text class="anno" x="1040" y="622">menos de 5 campos conferidos</text>
+  <text class="anno" x="1040" y="634">= veredito inconclusivo, não aprovado</text>
+
+  <path class="annol" d="M1495,760 L1495,790"/>
+  <path d="M1408,794 L1402,794 L1402,818 L1408,818" fill="none" stroke="#999999" stroke-width="1"/>
+  <text class="anno" x="1410" y="802">achou doc parecida: mostra e oferece</text>
+  <text class="anno" x="1410" y="814">atualizar a existente (vira rota B)</text>
+</svg>

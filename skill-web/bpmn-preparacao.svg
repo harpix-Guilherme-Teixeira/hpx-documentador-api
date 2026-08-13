@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 700" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="seq2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#333333"/>
+    </marker>
+    <marker id="msg2" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#666666" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <style>
+    .pool { fill: #ffffff; stroke: #333333; stroke-width: 1.6; }
+    .band { fill: #f5f5f5; stroke: #333333; stroke-width: 1.6; }
+    .lane { fill: none; stroke: #999999; stroke-width: 1; }
+    .task { fill: #ffffff; stroke: #333333; stroke-width: 1.5; }
+    .hl-task { fill: #FEF4F1; stroke: #EF5727; stroke-width: 1.8; }
+    .gw { fill: #ffffff; stroke: #333333; stroke-width: 1.5; }
+    .ev-start { fill: #ffffff; stroke: #333333; stroke-width: 1.6; }
+    .ev-end { fill: #ffffff; stroke: #333333; stroke-width: 3.4; }
+    .ev-mid { fill: #ffffff; stroke: #333333; stroke-width: 1.4; }
+    .seqf { fill: none; stroke: #333333; stroke-width: 1.5; }
+    .msgf { fill: none; stroke: #666666; stroke-width: 1.3; stroke-dasharray: 5 4; }
+    .t { font-size: 11.5px; fill: #111111; text-anchor: middle; }
+    .tl { font-size: 10px; fill: #555555; text-anchor: middle; font-style: italic; }
+    .lab { font-size: 10.5px; fill: #333333; text-anchor: middle; }
+    .band-t { font-size: 13px; fill: #111111; text-anchor: middle; font-weight: 600; }
+    .lane-t { font-size: 11px; fill: #333333; text-anchor: middle; }
+    .anno { font-size: 10px; fill: #555555; font-style: italic; }
+    .annol { fill: none; stroke: #999999; stroke-width: 1; stroke-dasharray: 2 3; }
+  </style>
+
+  <!-- ============ POOL: Preparação (uma vez por pessoa) ============ -->
+  <rect class="pool" x="20" y="20" width="1400" height="650"/>
+  <rect class="band" x="20" y="20" width="28" height="650"/>
+  <text class="band-t" transform="translate(38,345) rotate(-90)">Preparação do doc-api</text>
+
+  <rect class="lane" x="48" y="20" width="1372" height="420"/>
+  <rect class="band" x="48" y="20" width="24" height="420"/>
+  <text class="lane-t" transform="translate(64,230) rotate(-90)">Operador</text>
+
+  <rect class="lane" x="48" y="440" width="1372" height="230"/>
+  <rect class="band" x="48" y="440" width="24" height="230"/>
+  <text class="lane-t" transform="translate(64,555) rotate(-90)">Admin da organização</text>
+
+  <!-- ============ Início + gateway de canal ============ -->
+  <circle class="ev-start" cx="100" cy="225" r="16"/>
+  <text class="tl" x="100" y="260">vai documentar</text>
+  <text class="tl" x="100" y="272">pela primeira vez</text>
+
+  <path class="gw" d="M165,199 L191,225 L165,251 L139,225 Z"/>
+  <path d="M157,217 L173,233 M173,217 L157,233" stroke="#333333" stroke-width="1.6" fill="none"/>
+  <text class="tl" x="300" y="266">onde você usa o Claude?</text>
+
+  <line class="seqf" x1="116" y1="225" x2="137" y2="225" marker-end="url(#seq2)"/>
+
+  <!-- ============ Rota A: chat da web (principal) ============ -->
+  <polyline class="seqf" points="165,199 165,110 238,110" marker-end="url(#seq2)"/>
+  <text class="tl" x="205" y="96">chat da web</text>
+  <text class="tl" x="205" y="107">(principal)</text>
+
+  <rect class="task" x="240" y="82" width="140" height="56" rx="8"/>
+  <text class="t" x="310" y="106">Baixar o zip no</text>
+  <text class="t" x="310" y="120">harpix go</text>
+
+  <rect class="task" x="420" y="82" width="140" height="56" rx="8"/>
+  <text class="t" x="490" y="106">Ligar a execução</text>
+  <text class="t" x="490" y="120">de código</text>
+
+  <path class="gw" d="M605,84 L631,110 L605,136 L579,110 Z"/>
+  <path d="M597,102 L613,118 M613,102 L597,118" stroke="#333333" stroke-width="1.6" fill="none"/>
+  <text class="tl" x="605" y="73">as opções existem?</text>
+
+  <rect class="task" x="660" y="82" width="140" height="56" rx="8"/>
+  <text class="t" x="730" y="106">Enviar a skill</text>
+  <text class="t" x="730" y="120">(upload do zip)</text>
+
+  <line class="seqf" x1="380" y1="110" x2="418" y2="110" marker-end="url(#seq2)"/>
+  <line class="seqf" x1="560" y1="110" x2="577" y2="110" marker-end="url(#seq2)"/>
+  <line class="seqf" x1="631" y1="110" x2="658" y2="110" marker-end="url(#seq2)"/>
+  <text class="lab" x="645" y="103">sim</text>
+  <polyline class="seqf" points="800,110 870,110 870,197" marker-end="url(#seq2)"/>
+
+  <!-- ============ Rota B: Claude Desktop ============ -->
+  <line class="seqf" x1="191" y1="225" x2="238" y2="225" marker-end="url(#seq2)"/>
+  <text class="tl" x="214" y="218">Desktop</text>
+
+  <rect class="task" x="240" y="197" width="150" height="56" rx="8"/>
+  <text class="t" x="315" y="221">Rodar o npx setup</text>
+  <text class="t" x="315" y="235">no terminal</text>
+
+  <rect class="task" x="430" y="197" width="140" height="56" rx="8"/>
+  <text class="t" x="500" y="221">Fechar e abrir</text>
+  <text class="t" x="500" y="235">o Desktop</text>
+
+  <line class="seqf" x1="390" y1="225" x2="428" y2="225" marker-end="url(#seq2)"/>
+  <line class="seqf" x1="570" y1="225" x2="842" y2="225" marker-end="url(#seq2)"/>
+
+  <!-- ============ Rota C: Claude Code (plugin pelo link do repositório) ============ -->
+  <polyline class="seqf" points="165,251 165,340 228,340" marker-end="url(#seq2)"/>
+  <text class="tl" x="200" y="326">Claude Code</text>
+  <text class="tl" x="200" y="337">(dev)</text>
+
+  <rect class="task" x="230" y="312" width="180" height="56" rx="8"/>
+  <text class="t" x="320" y="336">Adicionar o marketplace</text>
+  <text class="t" x="320" y="350">com o link do repositório</text>
+
+  <rect class="task" x="430" y="312" width="160" height="56" rx="8"/>
+  <text class="t" x="510" y="336">Instalar o plugin e</text>
+  <text class="t" x="510" y="350">reiniciar o Claude Code</text>
+
+  <line class="seqf" x1="410" y1="340" x2="428" y2="340" marker-end="url(#seq2)"/>
+  <polyline class="seqf" points="590,340 870,340 870,253" marker-end="url(#seq2)"/>
+
+  <path class="annol" d="M320,368 L320,398"/>
+  <path d="M222,402 L216,402 L216,426 L222,426" fill="none" stroke="#999999" stroke-width="1"/>
+  <text class="anno" x="224" y="410">o link entra aqui: /plugin marketplace add</text>
+  <text class="anno" x="224" y="422">harpix-Guilherme-Teixeira/hpx-documentador-api</text>
+
+  <!-- ============ Convergência e fim ============ -->
+  <path class="gw" d="M870,199 L896,225 L870,251 L844,225 Z"/>
+  <path d="M862,217 L878,233 M878,217 L862,233" stroke="#333333" stroke-width="1.6" fill="none"/>
+
+  <rect class="task" x="930" y="197" width="140" height="56" rx="8"/>
+  <text class="t" x="1000" y="221">Conectar o</text>
+  <text class="t" x="1000" y="235">Atlassian</text>
+
+  <rect class="hl-task" x="1110" y="197" width="150" height="56" rx="8"/>
+  <text class="t" x="1185" y="221">Conferir o checklist</text>
+  <text class="t" x="1185" y="235">dos 3 sins</text>
+
+  <circle class="ev-end" cx="1320" cy="225" r="15"/>
+  <text class="tl" x="1320" y="260">pronto pra operar,</text>
+  <text class="tl" x="1320" y="272">nunca mais repete</text>
+
+  <line class="seqf" x1="896" y1="225" x2="928" y2="225" marker-end="url(#seq2)"/>
+  <line class="seqf" x1="1070" y1="225" x2="1108" y2="225" marker-end="url(#seq2)"/>
+  <line class="seqf" x1="1260" y1="225" x2="1303" y2="225" marker-end="url(#seq2)"/>
+
+  <!-- ============ Raia Admin ============ -->
+  <circle class="ev-mid" cx="605" cy="555" r="14"/>
+  <circle class="ev-mid" cx="605" cy="555" r="10.5"/>
+  <rect x="599" y="551.5" width="12" height="8" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <path d="M599,551.5 L605,556 L611,551.5" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <text class="tl" x="605" y="591">pedido de</text>
+  <text class="tl" x="605" y="603">habilitação</text>
+
+  <rect class="task" x="655" y="527" width="170" height="56" rx="8"/>
+  <text class="t" x="740" y="551">Habilitar Skills e Code</text>
+  <text class="t" x="740" y="565">execution no plano</text>
+
+  <circle class="ev-mid" cx="1080" cy="555" r="14"/>
+  <circle class="ev-mid" cx="1080" cy="555" r="10.5"/>
+  <rect x="1074" y="551.5" width="12" height="8" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <path d="M1074,551.5 L1080,556 L1086,551.5" fill="none" stroke="#333333" stroke-width="1.1"/>
+  <text class="tl" x="1080" y="591">falta permissão</text>
+  <text class="tl" x="1080" y="603">no Confluence</text>
+
+  <rect class="task" x="1120" y="527" width="180" height="56" rx="8"/>
+  <text class="t" x="1210" y="551">Conceder permissão de</text>
+  <text class="t" x="1210" y="565">escrita no Confluence</text>
+
+  <line class="seqf" x1="619" y1="555" x2="653" y2="555" marker-end="url(#seq2)"/>
+  <line class="seqf" x1="1094" y1="555" x2="1118" y2="555" marker-end="url(#seq2)"/>
+
+  <!-- ============ Fluxos de mensagem ============ -->
+  <line class="msgf" x1="605" y1="136" x2="605" y2="539" marker-end="url(#msg2)"/>
+  <text class="tl" x="527" y="460">não: é habilitação do</text>
+  <text class="tl" x="527" y="472">plano, não erro seu</text>
+
+  <line class="msgf" x1="740" y1="527" x2="740" y2="144" marker-end="url(#msg2)"/>
+  <text class="tl" x="800" y="460">habilitado,</text>
+  <text class="tl" x="800" y="472">segue o fluxo</text>
+
+  <line class="msgf" x1="1160" y1="253" x2="1085" y2="539" marker-end="url(#msg2)"/>
+  <text class="tl" x="1070" y="460">faltou o 3º sim</text>
+
+  <line class="msgf" x1="1210" y1="527" x2="1210" y2="256" marker-end="url(#msg2)"/>
+  <text class="tl" x="1287" y="460">permissão dada,</text>
+  <text class="tl" x="1287" y="472">confere de novo</text>
+</svg>

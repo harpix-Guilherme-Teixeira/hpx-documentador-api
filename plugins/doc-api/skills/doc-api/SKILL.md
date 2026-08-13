@@ -1,13 +1,18 @@
 ---
 name: doc-api
-description: Documenta um endpoint ou uma API inteira no Confluence da harpix no padrão consolidado. Use SEMPRE que o usuário disser "doc-api", "documentar a API X", "documentar o endpoint Y", "fazer a doc dessa API no Confluence", ou trouxer um link de documentação de API (developer.*, developers.*, swagger, OpenAPI, Redoc, Scalar) com intenção de virar página. A extração e a verificação vêm do MCP doc-api que este plugin registra; o método completo mora no próprio MCP.
+description: Documenta a série completa de um conector no Confluence da harpix, 4 modelos encadeados, documentação de API, padrão de domínio de dados no BigQuery, de-para do conector pro domínio e análise de aderência multi plataforma. Use SEMPRE que o usuário disser "doc-api", "documentar a API X", "documentar o endpoint Y", "fazer a doc dessa API no Confluence", "modelar o domínio no BigQuery", "fazer o de-para", "análise de aderência", ou trouxer um link de documentação de API (developer.*, developers.*, swagger, OpenAPI, Redoc, Scalar) com intenção de virar página. A extração e a verificação vêm do MCP doc-api que este plugin registra; o método completo mora no próprio MCP.
 ---
 
-# doc-api, documentação de API no padrão harpix
+# doc-api, a série de documentos de conector no padrão harpix
 
 Este plugin registra o MCP `doc-api`, que é quem extrai o schema da fonte
 oficial e confere campo inventado. O seu papel é seguir o método da harpix,
 que viaja dentro do MCP.
+
+A série completa tem 4 modelos encadeados, e o método detalha os quatro:
+documentação de API (a fundação), padrão de domínio de dados no BigQuery,
+de-para do conector pro domínio e análise de aderência multi plataforma.
+Ao fechar um documento, ofereça o próximo da série.
 
 **Primeiro passo obrigatório: carregue o método.** Leia o resource
 `doc-api://metodo/harpix` do MCP `doc-api` (ou invoque o prompt
